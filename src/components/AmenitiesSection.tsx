@@ -23,7 +23,7 @@ const AMENITIES = [
   { icon: CarFront, label: "Complimentary On-Site Parking" },
   { icon: UtensilsCrossed, label: "On-Site Restaurant" },
   { icon: ChefHat, label: "Home-Cooked Meals" },
-  { icon: Flame, label: "Room Service" },
+  { icon: BellRing, label: "Room Service" },
   { icon: Sofa, label: "Common Lounge" },
   { icon: Sun, label: "Second-Floor Sun Deck" },
   { icon: Gamepad2, label: "Game Room" },
