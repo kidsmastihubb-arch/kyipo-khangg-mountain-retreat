@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
-import { useForm, type Resolver } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
+import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { CalendarDays, MessageCircle, Send } from "lucide-react";
 import { SectionHeading } from "./SectionHeading";
@@ -67,9 +66,9 @@ export function BookingEnquiry() {
     register,
     handleSubmit,
     setValue,
+    setError,
     formState: { errors, isSubmitting },
   } = useForm<EnquiryForm>({
-    resolver: zodResolver(enquirySchema) as unknown as Resolver<EnquiryForm>,
     defaultValues: {
       name: "",
       phone: "",
