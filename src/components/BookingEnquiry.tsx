@@ -78,7 +78,7 @@ export function BookingEnquiry() {
       adults: 2,
       children: 0,
       rooms: 1,
-      roomType: ROOM_TYPES[0],
+      roomType: "Not sure yet — please suggest",
       specialRequests: "",
     },
   });

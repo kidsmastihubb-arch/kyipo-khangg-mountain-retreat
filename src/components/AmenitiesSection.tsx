@@ -6,7 +6,7 @@ import {
   Flame,
   Gamepad2,
   HeartHandshake,
-  Laundry,
+  Shirt,
   MessageCircle,
   PawPrint,
   Sofa,
@@ -29,7 +29,7 @@ const AMENITIES = [
   { icon: Sun, label: "Second-Floor Sun Deck" },
   { icon: Gamepad2, label: "Game Room" },
   { icon: Flame, label: "Garden Fireplace / Bonfire Setup" },
-  { icon: Laundry, label: "Laundry Service" },
+  { icon: Shirt, label: "Laundry Service" },
   { icon: PawPrint, label: "Pet-Friendly Environment" },
   { icon: Baby, label: "Child-Friendly Environment" },
   { icon: HeartHandshake, label: "LGBTQ+ Inclusive Environment" },
@@ -104,7 +104,7 @@ export function AmenitiesSection() {
               <Reveal
                 key={space.title}
                 delay={index * 120}
-                className={index === 1 ? "lg:-mt-10" : undefined}
+                className={index === 1 ? "lg:-mt-10" : ""}
               >
                 <article className="card-lift flex h-full flex-col rounded-3xl border border-cream/15 bg-cream/8 p-7 backdrop-blur-sm">
                   {index === 1 ? (
