@@ -1,5 +1,5 @@
-import { useEffect, useState, type FormEvent } from "react";
-import { useForm } from "react-hook-form";
+import { useEffect, useState } from "react";
+import { useForm, type Resolver } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { CalendarDays, MessageCircle, Send } from "lucide-react";

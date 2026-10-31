@@ -139,7 +139,10 @@ export function GallerySection() {
       </div>
 
       {/* Lightbox */}
-      {openIndex !== null ? (
+      {openIndex !== null ? (() => {
+        const photo = PHOTOS[openIndex];
+        if (!photo) return null;
+        return (
         <div
           role="dialog"
           aria-modal="true"
@@ -170,12 +173,12 @@ export function GallerySection() {
 
           <figure onClick={(e) => e.stopPropagation()} className="max-h-[86vh] max-w-5xl">
             <img
-              src={PHOTOS[openIndex].src}
-              alt={PHOTOS[openIndex].alt}
+              src={photo.src}
+              alt={photo.alt}
               className="max-h-[78vh] w-auto max-w-full rounded-xl object-contain"
             />
             <figcaption className="mt-4 text-center text-sm text-cream/85">
-              {PHOTOS[openIndex].alt}
+              {photo.alt}
               <span className="mt-1 block text-xs text-cream/50">
                 {openIndex + 1} / {PHOTOS.length}
               </span>
@@ -194,7 +197,8 @@ export function GallerySection() {
             <ChevronRight className="size-5" aria-hidden="true" />
           </button>
         </div>
-      ) : null}
+        );
+      })() : null}
     </section>
   );
 }
