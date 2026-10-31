@@ -69,7 +69,7 @@ export function BookingEnquiry() {
     setValue,
     formState: { errors, isSubmitting },
   } = useForm<EnquiryForm>({
-    resolver: zodResolver(enquirySchema),
+    resolver: zodResolver(enquirySchema) as unknown as Resolver<EnquiryForm>,
     defaultValues: {
       name: "",
       phone: "",
