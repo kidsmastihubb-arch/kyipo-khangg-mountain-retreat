@@ -1,5 +1,6 @@
 import {
   Baby,
+  BellRing,
   CarFront,
   ChefHat,
   Flame,
