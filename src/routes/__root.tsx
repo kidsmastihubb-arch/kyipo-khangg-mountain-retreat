@@ -78,19 +78,43 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { title: "Kyipo Khangg Cottage — A Mountain Retreat in Khaknal, Manali" },
+      {
+        name: "description",
+        content:
+          "Kyipo Khangg Cottage is a family-run mountain retreat in Khaknal, Manali — apple orchards, cedar trees, home-cooked meals and a quiet village setting on the Kullu–Naggar–Manali Road. Call +91 85447 94883 to enquire.",
+      },
+      { name: "author", content: "Kyipo Khangg Cottage" },
+      { property: "og:site_name", content: "Kyipo Khangg Cottage" },
+      {
+        property: "og:title",
+        content: "Kyipo Khangg Cottage — A Mountain Retreat in Khaknal, Manali",
+      },
+      {
+        property: "og:description",
+        content:
+          "A peaceful mountain retreat in Khaknal, Manali — boutique cottage stay near Sajla Waterfall with home-cooked dining, orchards and valley views.",
+      },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:site", content: "@Lovable" },
     ],
     links: [
       {
         rel: "stylesheet",
         href: appCss,
+      },
+      {
+        rel: "preconnect",
+        href: "https://fonts.googleapis.com",
+      },
+      {
+        rel: "preconnect",
+        href: "https://fonts.gstatic.com",
+        crossOrigin: "anonymous",
+      },
+      {
+        rel: "stylesheet",
+        href: "https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Work+Sans:wght@300;400;500;600&display=swap",
       },
       { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
     ],
