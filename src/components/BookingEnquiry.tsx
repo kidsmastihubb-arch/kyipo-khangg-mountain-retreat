@@ -96,16 +96,30 @@ export function BookingEnquiry() {
   }, [setValue]);
 
   const onSubmit = (values: EnquiryForm) => {
+    const parsed = enquirySchema.safeParse(values);
+    if (!parsed.success) {
+      for (const issue of parsed.error.issues) {
+        const field = issue.path[0];
+        if (field) {
+          setError(field as keyof EnquiryForm, {
+            type: "manual",
+            message: issue.message,
+          });
+        }
+      }
+      return;
+    }
+    const v = parsed.data;
     const url = createWhatsAppEnquiry({
-      name: values.name,
-      phone: values.phone,
-      checkIn: values.checkIn,
-      checkOut: values.checkOut,
-      adults: values.adults,
-      children: values.children,
-      rooms: values.rooms,
-      roomType: values.roomType,
-      message: [values.specialRequests, values.email ? `Email: ${values.email}` : null]
+      name: v.name,
+      phone: v.phone,
+      checkIn: v.checkIn,
+      checkOut: v.checkOut,
+      adults: v.adults,
+      children: v.children,
+      rooms: v.rooms,
+      roomType: v.roomType,
+      message: [v.specialRequests, v.email ? `Email: ${v.email}` : null]
         .filter(Boolean)
         .join(" · ") || "Please share current rates and availability.",
     });
